@@ -1,0 +1,27 @@
+{
+  "name": "zim32/symfony-tracing-messenger",
+  "type": "symfony-bundle",
+  "version": "1.0.0",
+  "description": "Symfony OpenTelemetry integration for Messenger component",
+  "keywords": ["opentelemetry", "tracing", "bundle", "symfony", "messenger"],
+  "authors": [
+    {
+      "name": "Yurij Uvarov",
+      "email": "yurij.uvarov@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "zim32/symfony-tracing-core": "*",
+    "symfony/messenger": "7.1.* | 6.4.*",
+    "symfony/dependency-injection": "7.1.* | 6.4.*",
+    "symfony/config": "7.1.* | 6.4.*",
+    "symfony/event-dispatcher": "7.1.* | 6.4.*"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Zim\\SymfonyTracingMessengerBundle\\": "src/"
+    }
+  }
+}
