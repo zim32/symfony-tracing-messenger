@@ -14,11 +14,12 @@ use Symfony\Component\Messenger\Event\SendMessageToTransportsEvent;
 use Symfony\Component\Messenger\Event\WorkerMessageFailedEvent;
 use Symfony\Component\Messenger\Event\WorkerMessageHandledEvent;
 use Symfony\Component\Messenger\Event\WorkerMessageReceivedEvent;
+use Symfony\Contracts\Service\ResetInterface;
 use Zim\SymfonyTracingCoreBundle\RootContextProvider;
 use Zim\SymfonyTracingCoreBundle\ScopedSpan;
 use Zim\SymfonyTracingCoreBundle\ScopedTracerInterface;
 
-class MessengerEventSubscriber implements EventSubscriberInterface
+class MessengerEventSubscriber implements EventSubscriberInterface, ResetInterface
 {
     private ?ScopedSpan $currentSpan;
 
@@ -96,7 +97,7 @@ class MessengerEventSubscriber implements EventSubscriberInterface
         $this->reset();
     }
 
-    private function reset(): void
+    public function reset(): void
     {
         if ($this->currentSpan !== null) {
             $this->currentSpan->end();

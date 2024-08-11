@@ -1,7 +1,7 @@
 {
   "name": "zim32/symfony-tracing-messenger",
   "type": "symfony-bundle",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Symfony OpenTelemetry integration for Messenger component",
   "keywords": ["opentelemetry", "tracing", "bundle", "symfony", "messenger"],
   "authors": [

@@ -18,6 +18,7 @@ class SymfonyTracingMessengerBundle extends AbstractBundle
     {
         $definition = (new Definition(MessengerEventSubscriber::class))
             ->addTag('kernel.event_subscriber')
+            ->addTag('kernel.reset', ['method' => 'reset'])
             ->setArguments([
                 '$rootContextProvider' => new Reference('tracing.root_context_provider'),
                 '$tracer' => new Reference('tracing.scoped_tracer.default')
